@@ -1,7 +1,7 @@
 class Stack
 
     # last in first out
-
+    private # only access inside the class
     attr_reader :stack
 
     def initialize
@@ -12,7 +12,8 @@ class Stack
 
     def push(ele)
 
-        stack.push(ele)
+        stack << ele
+        self             # add instance to force a undifined method error to stop manipulation
 
     end
 
@@ -24,9 +25,29 @@ class Stack
 
     def peek
 
-        return stack.first
+        stack.last
 
     end
+
+    def empty?
+
+        stack.empty?
+
+    end
+
+    def expose
+
+        @stack
+
+    end
+
+    def inspect
+
+        "#<Stack: #{self.object_id}>"
+        
+    end
+
+
 
 end
 
