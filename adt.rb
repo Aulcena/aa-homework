@@ -42,13 +42,42 @@ class Stack
     end
 
     def inspect
+        #string interpoolation. method overites rubys built in inspect method
+        "#<Stack: #{self.object_id}>"     
 
-        "#<Stack: #{self.object_id}>"
-        
     end
 
 
 
+end
+
+class MyQueue
+
+    private
+    attr_reader :inner_array
+
+    def initialize
+
+        @inner_array.push(ele)
+
+    end
+
+    def dequeue
+
+        @inner_array.shift
+
+    end
+
+    def show
+
+        inner_array.dup                 # to show a copy of the orignal 
+
+    end
+
+    def empty?
+
+    inner_array.empty?
+    end
 end
 
 
